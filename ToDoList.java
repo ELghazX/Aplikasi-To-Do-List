@@ -6,7 +6,7 @@ public class ToDoList {
     public static String[] model = new String[10];
 
     public static void main(String[] args) {
-
+        testGetToDo();
     }
 
     // menampilkan data
@@ -18,22 +18,23 @@ public class ToDoList {
             if (todo != null) {
                 System.out.println(no + " " + todo);
             }
-
         }
     }
 
+    public static void testGetToDo() {
+        model[0] = "item 1";
+        model[1] = "item 2";
+        getToDo();
+    }
+
     // add data
-    public static void addToDo() {
-
-    }
-
-    // del data
-    public static void delToDo() {
-
-    }
-
-    // view
-    public static void viewGetToDo() {
+    public static void addToDo(String todo) {
+        for (var i = 0; i < model.length; i++) {
+            if (model[i] == null) {
+                model[i] = todo;
+                break;
+            }
+        }
 
     }
 
