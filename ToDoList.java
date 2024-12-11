@@ -6,7 +6,7 @@ public class ToDoList {
     public static String[] model = new String[10];
 
     public static void main(String[] args) {
-        testGetToDo();
+        testAddToDo();
     }
 
     // menampilkan data
@@ -16,7 +16,7 @@ public class ToDoList {
             var no = i + 1;
 
             if (todo != null) {
-                System.out.println(no + " " + todo);
+                System.out.println(no + ". " + todo);
             }
         }
     }
@@ -35,6 +35,29 @@ public class ToDoList {
                 break;
             }
         }
+        var isFull = true;
+        for (var i = 0; i < model.length; i++) {
+            if (model[i] == null) {
+                isFull = false;
+                break;
+            }
+
+        }
+        // jika data penuh di array, kalikan 2 yang baru
+        if (isFull) {
+            var temp = model;
+            model = new String[model.length * 2];
+            for (var i = 0; i < temp.length; i++) {
+                model[i] = temp[i];
+            }
+        }
+    }
+
+    public static void testAddToDo() {
+        for (var i = 0; i < 25; i++) {
+            addToDo("todo ke - " + i);
+        }
+        getToDo();
 
     }
 
