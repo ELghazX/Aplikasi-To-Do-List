@@ -130,6 +130,14 @@ public class ToDoList {
   }
 
   public static void viewAddToDo() {
+    System.out.println("Menambah daftar kegiatan");
+    var todo = input("todo (ketikkan 0 untuk membatalkan)");
+
+    if (todo.equals("0")) {
+      // batal balik ke viewGetToDo
+    } else {
+      addToDo(todo);
+    }
 
   }
 
