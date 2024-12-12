@@ -4,11 +4,16 @@ public class ToDoList {
   // view show
   // view add
   // view delete
+
+  /**
+   * deklarasi variable
+   */
+
   public static String[] model = new String[10];
   public static java.util.Scanner scanner = new java.util.Scanner(System.in);
 
   public static void main(String[] args) {
-    testInput();
+    viewGetToDo();
   }
 
   public static String input(String info) {
@@ -85,6 +90,32 @@ public class ToDoList {
     } else {
       model[number - 1] = null;
       return true;
+    }
+  }
+
+  /**
+   * view page
+   */
+
+  public static void viewGetToDo() {
+    while (true) {
+      getToDo();
+
+      String menu = "Menu Todolist: \n"
+          + "1. Tambah Kegiatan\n"
+          + "2. Hapus Kegiatan\n"
+          + "0. Keluar\n";
+      System.out.println(menu);
+      var input = input("pilihan");
+      if (input.equals("1")) {
+        viewAddToDo();
+      } else if (input.equals("2")) {
+        viewDelToDo();
+      } else if (input.equals("0")) {
+        break;
+      } else {
+        System.out.println("invalid input\n");
+      }
     }
   }
 
