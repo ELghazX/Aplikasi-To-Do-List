@@ -13,7 +13,7 @@ public class ToDoList {
   public static java.util.Scanner scanner = new java.util.Scanner(System.in);
 
   public static void main(String[] args) {
-    testViewAddToDo();
+    testViewDelTodDo();
   }
 
   public static String input(String info) {
@@ -34,9 +34,8 @@ public class ToDoList {
     System.out.println("To do list: ");
     for (var i = 0; i < model.length; i++) {
       var todo = model[i];
-      var no = i + 1;
-
       if (todo != null) {
+        var no = i + 1;
         System.out.println(no + ". " + todo);
       }
     }
@@ -86,10 +85,15 @@ public class ToDoList {
     if ((number - 1) >= model.length) {
       return false;
     } else if ((model[number - 1]) == null) {
-
       return false;
     } else {
-      model[number - 1] = null;
+      for(var i = 0; i <model.length;i++){
+        if ( i == model.length -1 ){
+          model[i] = null;
+        }else{
+          model[i] = model[i+1];
+        }
+      }
       return true;
     }
   }
@@ -151,7 +155,7 @@ public class ToDoList {
   }
 
   public static void viewDelToDo() {
-    System.out.println("Menghapus daftar kegiatan");
+    System.out.println("Menghapus  daftar kegiatan");
     var number = input("Nomor kegiatan yang ingin dihapus (0 untuk batal)");
     if (number.equals("0")) {
       // batal
@@ -161,6 +165,14 @@ public class ToDoList {
         System.out.println("Gagal Menghapus: " + number);
       }
     }
+  }
 
+  public static void testViewDelTodDo() {
+    addToDo("item 1");
+    addToDo("item 2");
+    addToDo("item 3");
+    getToDo();
+    viewDelToDo();
+    getToDo();
   }
 }
