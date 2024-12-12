@@ -13,7 +13,7 @@ public class ToDoList {
   public static java.util.Scanner scanner = new java.util.Scanner(System.in);
 
   public static void main(String[] args) {
-    testViewDelTodDo();
+    viewGetToDo();
   }
 
   public static String input(String info) {
@@ -87,11 +87,11 @@ public class ToDoList {
     } else if ((model[number - 1]) == null) {
       return false;
     } else {
-      for(var i = 0; i <model.length;i++){
-        if ( i == model.length -1 ){
+      for (var i = 0; i < model.length; i++) {
+        if (i == model.length - 1) {
           model[i] = null;
-        }else{
-          model[i] = model[i+1];
+        } else {
+          model[i] = model[i + 1];
         }
       }
       return true;
@@ -104,12 +104,13 @@ public class ToDoList {
 
   public static void viewGetToDo() {
     while (true) {
+      System.out.println("");
       getToDo();
-
+      System.out.println("");
       String menu = "Menu Todolist: \n"
           + "1. Tambah Kegiatan\n"
           + "2. Hapus Kegiatan\n"
-          + "0. Keluar\n";
+          + "0. Keluar";
       System.out.println(menu);
       var input = input("pilihan");
       if (input.equals("1")) {
