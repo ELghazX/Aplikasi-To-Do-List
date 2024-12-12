@@ -5,9 +5,23 @@ public class ToDoList {
   // view add
   // view delete
   public static String[] model = new String[10];
+  public static java.util.Scanner scanner = new java.util.Scanner(System.in);
 
   public static void main(String[] args) {
-    testAddToDo();
+    testInput();
+  }
+
+  public static String input(String info) {
+    System.out.print(info + " : ");
+    String data = scanner.nextLine();
+    return data;
+  }
+
+  public static void testInput() {
+    var name = input("nama");
+    var nim = input("nim");
+    System.out.println("hi " + name);
+    System.out.println("NIM kamu: " + nim);
   }
 
   // menampilkan data
