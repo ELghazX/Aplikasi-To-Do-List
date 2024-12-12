@@ -13,7 +13,7 @@ public class ToDoList {
   public static java.util.Scanner scanner = new java.util.Scanner(System.in);
 
   public static void main(String[] args) {
-    viewGetToDo();
+    testViewGetToDo();
   }
 
   public static String input(String info) {
@@ -31,6 +31,7 @@ public class ToDoList {
 
   // menampilkan data
   public static void getToDo() {
+    System.out.println("To do list: ");
     for (var i = 0; i < model.length; i++) {
       var todo = model[i];
       var no = i + 1;
@@ -117,6 +118,15 @@ public class ToDoList {
         System.out.println("invalid input\n");
       }
     }
+  }
+
+  public static void testViewGetToDo() {
+    addToDo("item 1");
+    addToDo("item 2");
+    addToDo("item 3");
+    addToDo("item 4");
+    viewGetToDo();
+
   }
 
   public static void viewAddToDo() {
