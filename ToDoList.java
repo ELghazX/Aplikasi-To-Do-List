@@ -13,7 +13,7 @@ public class ToDoList {
   public static java.util.Scanner scanner = new java.util.Scanner(System.in);
 
   public static void main(String[] args) {
-    testViewGetToDo();
+    testViewAddToDo();
   }
 
   public static String input(String info) {
@@ -139,6 +139,15 @@ public class ToDoList {
       addToDo(todo);
     }
 
+  }
+
+  public static void testViewAddToDo() {
+    addToDo("item 1");
+    addToDo("item 2");
+    addToDo("item 3");
+    addToDo("item 4");
+    viewAddToDo();
+    getToDo();
   }
 
   public static void viewDelToDo() {
