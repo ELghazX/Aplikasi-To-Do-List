@@ -151,6 +151,16 @@ public class ToDoList {
   }
 
   public static void viewDelToDo() {
+    System.out.println("Menghapus daftar kegiatan");
+    var number = input("Nomor kegiatan yang ingin dihapus (0 untuk batal)");
+    if (number.equals("0")) {
+      // batal
+    } else {
+      boolean success = delToDo(Integer.valueOf(number));
+      if (!success) {
+        System.out.println("Gagal Menghapus: " + number);
+      }
+    }
 
   }
 }
