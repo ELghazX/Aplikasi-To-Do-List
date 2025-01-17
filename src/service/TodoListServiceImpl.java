@@ -28,7 +28,7 @@ public class TodoListServiceImpl implements TodoListService {
     public void addTodoList(String todo) {
         TodoList todoList = new TodoList(todo);
         todoListRepository.add(todoList);
-        System.out.println("Suksek menambahkan"+ todo);
+        System.out.println("Sukses menambahkan "+ todo);
 
     }
 
