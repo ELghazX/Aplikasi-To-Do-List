@@ -6,11 +6,9 @@ import entity.TodoList;
 public class TodoListServiceImpl implements TodoListService {
     private  TodoListRepository todoListRepository;
 
-
     public TodoListServiceImpl(TodoListRepository todoListRepository){
         this.todoListRepository = todoListRepository;
     }
-
 
     @Override
     public void showTodoList() {
@@ -28,6 +26,9 @@ public class TodoListServiceImpl implements TodoListService {
 
     @Override
     public void addTodoList(String todo) {
+        TodoList todoList = new TodoList(todo);
+        todoListRepository.add(todoList);
+        System.out.println("Suksek menambahkan"+ todo);
 
     }
 
