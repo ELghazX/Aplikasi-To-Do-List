@@ -53,7 +53,7 @@ public class TodoListRepositoryImpl implements TodoListRepository {
         } else if ((data[number - 1]) == null) {
             return false;
         } else {
-            for (var i = 0; i < data.length; i++) {
+            for (var i = (number - 1); i < data.length; i++) {
                 if (i == data.length - 1) {
                     data[i] = null;
                 } else {
